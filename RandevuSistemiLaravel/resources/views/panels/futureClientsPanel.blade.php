@@ -86,11 +86,9 @@ for($i = 0; $i < 14; $i++)
                         </td>
                         <?php  } ?>
                         <td><center>
-                            {!! Form::open(['url'=>'musteri-sil']) !!}
-                            <input type="number" class="hidden" name="id" value="{{ $list->id }}"/>
-                            <button type="submit" title="Sil"  class="btn btn-danger glyphicon glyphicon-trash"></button>
-                            {!! Form::close() !!}
-                            </center>
+                        <a href='#myDoctor<?= $list->id ?>' data-toggle="modal"  class="btn btn-danger glyphicon glyphicon-trash" title="Sil"></a>
+                        @include('forms.deleteModalForm',['id'=>$list->id,'url'=>'./musteri-sil'])
+                        </center>
                         </td>
                     </tr>
                     <?php } 

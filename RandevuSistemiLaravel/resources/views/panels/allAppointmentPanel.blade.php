@@ -63,10 +63,8 @@ use App\Client;
                         </center>
                      </td>
                     <td><center>
-                        {!! Form::open(['url'=>'musteri-sil']) !!}
-                        <input type='text' class='hidden' name="id" value='{{ $client->id }}'/>
-                        <button type="submit" <?= $disabled ?> class="btn btn-danger glyphicon glyphicon-trash" title="Sil"></button>
-                        {!! Form::close() !!}
+                        <a href='#myDoctor<?= $client->id ?>' data-toggle="modal"  <?= $disabled ?> class="btn btn-danger glyphicon glyphicon-trash" title="Sil"></a>
+                        @include('forms.deleteModalForm',['id'=>$client->id,'url'=>'./musteri-sil'])
                         </center>
                      </td>
                 </tr>    

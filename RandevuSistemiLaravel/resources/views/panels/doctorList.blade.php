@@ -44,10 +44,8 @@ if(isset($_SESSION['authorization']) && $_SESSION['authorization'] == 1) {
                         </center>
                      </td>
                     <td><center>
-                        {!! Form::open(['url'=>'./doktor-sil']) !!}
-                        <input type='text' class='hidden' name="id" value='<?= $doktor->id ?>'/>
-                        <button type="submit" class="btn btn-danger glyphicon glyphicon-trash" title="Sil"></button>
-                        {!! Form::close() !!}
+                        <a href='#myDoctor<?= $doktor->id ?>' data-toggle="modal"   class="btn btn-danger glyphicon glyphicon-trash" title="Sil"></a>
+                        @include('forms.deleteModalForm',['id'=>$doktor->id,'url'=>'./doktor-sil'])
                         </center>
                      </td>
                 </tr>    

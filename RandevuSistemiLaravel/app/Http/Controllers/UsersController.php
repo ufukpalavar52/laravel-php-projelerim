@@ -66,7 +66,7 @@ class UsersController extends Controller
         } else {
             $_SESSION['delete'] = '<p style="color:red;">Doktor Silinemedi.</p>';
         }
-        return Redirect::to('./kullanici-ekle');
+        return Redirect::to('./doktorlar');
     }
     
     function showDoctors() 
